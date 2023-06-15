@@ -66,3 +66,56 @@ const jobs = [
     postDate: "6 days ago",
   },
 ];
+
+console.log(jobs); // manual testing, opens the jobs structue on web console
+
+const key = "title";
+
+console.log(jobs[0][key]);
+
+for (i = 0; i < jobs.length; i++) {
+  console.log(jobs[i].title) 
+}
+
+let jobCount = jobs.length;
+console.log(jobCount);
+
+let jobLocationPreferance = "Remote";
+// cant redeclare with "let"; but you can redefine
+jobLocationPreferance = "Los Angles";
+console.log(jobLocationPreferance);
+
+//const compliments = [];
+//compliments.push("You are very friendly");
+
+//checking truthiness or falseiness
+
+console.log(!!true); // will give you true
+console.log(!!false); // will give you false
+console.log(!!""); // will give you false, empty string
+
+console.log(!!"hello"); // true, string exisits
+console.log(!!null); // returns null, an intentional empty item set by developer
+
+// I want to print to console the following:
+// this {company} is hiring {job title} and offering {salary}
+
+// const firstJob = jobs[0];
+// console.log("The ${firstJob.company} is hiring a ${firstJob.title} and offering ${firstJob.salary}");
+
+// const trip = ["Lancaster", "New York"];
+// const [from, to] = trip;
+
+function calculateAvgSalary (jobs) {
+  let totalSalary = 0;
+  for (let i = 0; i < jobs.length; i++) {
+    let salaryRange = jobs[i].salary.split("-"); 
+    let minSalary;  
+    let maxSalary;
+    let avgSalary;
+    totalSalary += avgSalary;
+  }
+}
+
+//for the HW assignment read the MDN prototype of the description
+//get a clear understanding of what the function accepts as a parameter
