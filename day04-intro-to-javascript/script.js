@@ -117,5 +117,16 @@ function calculateAvgSalary (jobs) {
   }
 }
 
+
+
 //for the HW assignment read the MDN prototype of the description
 //get a clear understanding of what the function accepts as a parameter
+
+jobs.forEach(job => console.log(job.title))
+const jobTitles = jobs.map(job => job.title)
+console.log(jobTitles);
+
+const remoteJobs = jobs.filter(job => {
+  return job.location.toLowerCase().includes("remote");
+})
+console.log(remoteJobs);
