@@ -28,7 +28,7 @@ function JobCard({ job }) {
 }
 
 JobCard.propTypes = {
-  job: {
+  job: PropType.shape ({
     image: {
       src: PropTypes.string,
       alt: PropTypes.string,
@@ -38,7 +38,7 @@ JobCard.propTypes = {
     salary: PropTypes.string,
     location: PropTypes.string,
     postDate: PropTypes.string,
-  },
+  }),
 };
 
 export default JobCard;
