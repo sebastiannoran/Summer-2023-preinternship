@@ -4,7 +4,11 @@
   "description": "Class Days and Class Times:",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint src --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview",
+    "test": "vitest"
   },
   "keywords": [],
   "author": "",

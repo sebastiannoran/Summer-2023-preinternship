@@ -1,7 +1,7 @@
 import { useState } from "react";
 import classNames from "classnames";
 import JobCard from "./JobCard";
-import jobs from "./jobs";
+import jobData from "./jobs";
 import "./App.css";
 
 const statuses = {
@@ -14,6 +14,7 @@ const statuses = {
 };
 
 function App() {
+  const [jobs, setJobs] = useState(jobData);
   const [selectedStatus, setSelectedStatus] = useState(1);
 
   const filteredJobs = jobs.filter(job => job.status === selectedStatus)
