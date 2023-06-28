@@ -1,10 +1,10 @@
-import { useState } from "react";
 import classNames from "classnames";
 import JobCard from "./JobCard";
 import jobsData from "./jobs";
 import "./App.css";
 import Modal from "./ui/Modal";
 import AddJobForm from "./AddJobForm";
+import { useEffect, useState } from 'react';
 
 const statuses = {
   1: "Bookmarked",
@@ -16,9 +16,18 @@ const statuses = {
 };
 
 function App() {
-  const [jobs, setJobs] = useState(jobsData);
+  const [jobs, setJobs] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedStatus, setSelectedStatus] = useState(1);
+
+  useEffect (() => {
+    async function fetchJobs() {
+      const response = await fetch ("http://localhost:3000/jobs");
+      const jobs = response.json();
+      setJobs(jobs);
+    }
+      fetchJobs();
+  }, [])
 
   const filteredJobs = jobs.filter((job) => job.status === selectedStatus);
 
