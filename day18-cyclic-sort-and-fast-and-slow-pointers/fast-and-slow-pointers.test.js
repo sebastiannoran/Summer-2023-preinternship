@@ -16,3 +16,9 @@ describe("hasCycle", () => {
     expect(hasCycle(head)).toEqual(false);
   })
 })
+
+describe ("cycleLength", () => {
+  test("a -> b -> c -> d -> (2nd node with b value) => cycle length of 3", ( {
+    
+  }))
+})

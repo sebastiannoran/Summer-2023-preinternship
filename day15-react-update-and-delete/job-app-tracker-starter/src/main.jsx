@@ -15,10 +15,11 @@ import AddJobForm, { action as addJobAction} from "./AddJobForm.jsx";
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Root />,
+    element: <Root />,  
     errorElement: <ErrorPage />,
     children: [
       {
+        index: true,
         path: "",
         element: <JobList />,
         loader: jobLoader,

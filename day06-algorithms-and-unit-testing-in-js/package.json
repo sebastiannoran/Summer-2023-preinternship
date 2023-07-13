@@ -1,0 +1,15 @@
+{
+  "name": "summer-2023-preinternship",
+  "version": "1.0.0",
+  "description": "Class Days and Class Times:",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.5.0"
+  }
+}

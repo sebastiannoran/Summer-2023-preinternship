@@ -4,6 +4,22 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.bulkInsert(
+      "users",
+      [
+        {
+          name: "Dakota",
+          email: "dakota@dakota.com",
+          createdAt: new Date(),
+          updatedAt: new Date(),
+        },
+      ],
+      {}
+    );
+    const users = await queryInterface.sequelize.query(`SELECT id FROM users`);
+
+    const userId = users[0][0].id;
+
+    await queryInterface.bulkInsert(
       "job_applications",
       [
         {
@@ -17,6 +33,7 @@ module.exports = {
           status: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          UserId: userId
         },
         {
           company: "Jobot",
@@ -29,6 +46,7 @@ module.exports = {
           status: 1,
           createdAt: new Date(),
           updatedAt: new Date(),
+          UserId: userId
         },
         {
           company: "Braintrust",
@@ -41,6 +59,7 @@ module.exports = {
           status: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          UserId: userId
         },
         {
           company: "Underdog.io",
@@ -53,6 +72,7 @@ module.exports = {
           status: 2,
           createdAt: new Date(),
           updatedAt: new Date(),
+          UserId: userId
         },
       ],
       {}
@@ -61,5 +81,6 @@ module.exports = {
 
   async down(queryInterface, Sequelize) {
     await queryInterface.bulkDelete("job_applications", null, {});
+    await queryInterface.bulkDelete("users", null, {});
   },
 };
