@@ -2,10 +2,7 @@ import * as React from "react";
 import * as ReactDOM from "react-dom/client";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import Root, {
-  loader as rootLoader,
-  action as logoutAction,
-} from "./routes/root";
+import Root from "./routes/root";
 import ErrorPage from "./ErrorPage";
 import Login, { action as loginAction } from "./routes/auth/Login";
 import Signup, { action as signupAction } from "./routes/auth/Signup";
@@ -29,8 +26,6 @@ const router = createBrowserRouter([
     path: "/",
     element: <Root />,
     errorElement: <ErrorPage />,
-    loader: rootLoader,
-    action: logoutAction,
     children: [
       {
         index: true,
